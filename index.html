@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html data-ng-app="myApp">
+
+	<head>
+
+		<title>Angular Project 2</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="style.css">
+		<script src="1.4.8.angular.min.js"></script>
+		<script src="3.1.1.jquery.min.js"></script>
+		<script src="app.js"></script>
+
+	</head>
+
+	<body>
+
+		<header>
+			<h1>PartyOn!</h1>
+			<h3>Have fun changing the color of this light bulb with this cool web app</h3>
+		</header>
+
+		<section ng-controller="formController">
+
+			<form id="onOffSwitchForm">
+				<h1>Switch</h1>
+
+				<input type="radio" ng-model="value" name="switch" value="on" ng-change="switchValue(value)"> On <br>
+				<input type="radio" ng-model="value" name="switch" value="off" ng-change="switchValue(value)"> Off <br>
+			</form>
+
+			<form id="colorSwitchForm" ng-submit="switchColor(colorValue)">
+				<h1>Color Picker</h1>
+
+				Select a color: #<input type="text" ng-model="colorValue" name="hexPicker">
+				<input type="submit" value="Change Color"><br>
+
+				<a href="http://www.w3schools.com/colors/colors_picker.asp" target="_blank">Reference HTML color picker</a>
+			</form>
+
+			<form id="patternForm" ng-submit="switchPattern(patternValue)">
+				<h1>Pattern Selector</h1>
+
+				<select ng-model="patternValue" name="patternPicker">
+					<!--These are to be named when we figure out what patterns we would like to use-->
+					<option value="1">Seven Color Cross Fade</option>
+					<option value="2">Red Gradual Change</option>
+					<option value="3">Green Gradual Change</option>
+					<option value="4">Blue Gradual Change</option>
+					<option value="5">Yellow Gradual Change</option>
+				</select>
+					<br><br>
+				<input type="submit" value="Select Pattern">
+			</form>
+		</section>
+
+		<footer>
+		</footer>
+
+	</body>
+
+</html>
